@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Compiled_Module_PDF.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="acute-diarrheal-diseases-comprehensive-teaching-learning-module">Acute Diarrheal Diseases: Comprehensive Teaching-Learning Module</h1>
+<p><strong>MBBS 3rd Year | Competency-Based Medical Education (CBME)</strong></p>
+<p><strong>Created by: Dr. Siddalingaiah H S</strong><br>
+<strong>Professor, Community Medicine</strong><br>
+<strong>SIMSRH, Tumkur</strong><br>
+<strong>Email:</strong> hssling@yahoo.com | <strong>Phone:</strong> +91-8941087719</p>
+<hr>
+<h2 id="table-of-contents">Table of Contents</h2>
+<h3 id="1-module-overview"><a href="#1-module-overview">1. Module Overview</a></h3>
+<ul>
+<li><a href="#11-learning-objectives">1.1 Learning Objectives</a></li>
+<li><a href="#12-module-structure">1.2 Module Structure</a></li>
+<li><a href="#13-assessment-framework">1.3 Assessment Framework</a></li>
+</ul>
+<h3 id="2-theoretical-foundations"><a href="#2-theoretical-foundations">2. Theoretical Foundations</a></h3>
+<ul>
+<li><a href="#21-epidemiology">2.1 Epidemiology</a></li>
+<li><a href="#22-etiology--pathophysiology">2.2 Etiology &amp; Pathophysiology</a></li>
+<li><a href="#23-clinical-features">2.3 Clinical Features</a></li>
+<li><a href="#24-complications">2.4 Complications</a></li>
+</ul>
+<h3 id="3-management-strategies"><a href="#3-management-strategies">3. Management Strategies</a></h3>
+<ul>
+<li><a href="#31-a-b-c-d-approach">3.1 A-B-C-D Approach</a></li>
+<li><a href="#32-dehydration-assessment">3.2 Dehydration Assessment</a></li>
+<li><a href="#33-oral-rehydration-therapy">3.3 Oral Rehydration Therapy</a></li>
+<li><a href="#34-pharmacological-management">3.4 Pharmacological Management</a></li>
+</ul>
+<h3 id="4-case-studies"><a href="#4-case-studies">4. Case Studies</a></h3>
+<ul>
+<li><a href="#41-case-1-acute-watery-diarrhea">4.1 Case 1: Acute Watery Diarrhea</a></li>
+<li><a href="#42-case-2-acute-bloody-diarrhea">4.2 Case 2: Acute Bloody Diarrhea</a></li>
+<li><a href="#43-case-3-cholera-outbreak">4.3 Case 3: Cholera Outbreak</a></li>
+</ul>
+<h3 id="5-psychosocial-aspects"><a href="#5-psychosocial-aspects">5. Psychosocial Aspects</a></h3>
+<ul>
+<li><a href="#51-family-dynamics">5.1 Family Dynamics</a></li>
+<li><a href="#52-cultural-considerations">5.2 Cultural Considerations</a></li>
+<li><a href="#53-stigma--discrimination">5.3 Stigma &amp; Discrimination</a></li>
+</ul>
+<h3 id="6-prevention--control"><a href="#6-prevention--control">6. Prevention &amp; Control</a></h3>
+<ul>
+<li><a href="#61-wash-interventions">6.1 WASH Interventions</a></li>
+<li><a href="#62-vaccination-programs">6.2 Vaccination Programs</a></li>
+<li><a href="#63-community-mobilization">6.3 Community Mobilization</a></li>
+</ul>
+<h3 id="7-indian-healthcare-context"><a href="#7-indian-healthcare-context">7. Indian Healthcare Context</a></h3>
+<ul>
+<li><a href="#71-national-health-mission">7.1 National Health Mission</a></li>
+<li><a href="#72-icds--anganwadi-system">7.2 ICDS &amp; Anganwadi System</a></li>
+<li><a href="#73-asha-program">7.3 ASHA Program</a></li>
+</ul>
+<h3 id="8-practical-skills"><a href="#8-practical-skills">8. Practical Skills</a></h3>
+<ul>
+<li><a href="#81-dehydration-assessment">8.1 Dehydration Assessment</a></li>
+<li><a href="#82-ors-preparation">8.2 ORS Preparation</a></li>
+<li><a href="#83-patient-counseling">8.3 Patient Counseling</a></li>
+</ul>
+<h3 id="9-assessment-tools"><a href="#9-assessment-tools">9. Assessment Tools</a></h3>
+<ul>
+<li><a href="#91-multiple-choice-questions">9.1 Multiple Choice Questions</a></li>
+<li><a href="#92-osce-stations">9.2 OSCE Stations</a></li>
+<li><a href="#93-case-analysis-rubrics">9.3 Case Analysis Rubrics</a></li>
+</ul>
+<h3 id="10-references--resources"><a href="#10-references--resources">10. References &amp; Resources</a></h3>
+<ul>
+<li><a href="#101-key-guidelines">10.1 Key Guidelines</a></li>
+<li><a href="#102-research-papers">10.2 Research Papers</a></li>
+<li><a href="#103-online-resources">10.3 Online Resources</a></li>
+</ul>
+<hr>
+<h2 id="1-module-overview">1. Module Overview</h2>
+<h3 id="11-learning-objectives">1.1 Learning Objectives</h3>
+<p>By the end of this module, MBBS 3rd year students will be able to:</p>
+<h4 id="clinical-competence">Clinical Competence</h4>
+<ul>
+<li>Diagnose and classify different types of acute diarrhea</li>
+<li>Assess dehydration status using WHO criteria</li>
+<li>Apply appropriate rehydration and pharmacological management</li>
+<li>Recognize complications and initiate timely interventions</li>
+</ul>
+<h4 id="psychosocial-awareness">Psychosocial Awareness</h4>
+<ul>
+<li>Address family dynamics and caregiver stress</li>
+<li>Demonstrate cultural competence in diverse settings</li>
+<li>Implement community-based psychosocial support</li>
+<li>Recognize stigma associated with diarrheal diseases</li>
+</ul>
+<h4 id="public-health-perspective">Public Health Perspective</h4>
+<ul>
+<li>Understand epidemiology in Indian context</li>
+<li>Implement NHM/ICDS/ASHA program integration</li>
+<li>Design community-level prevention strategies</li>
+<li>Participate in outbreak investigation and control</li>
+</ul>
+<h4 id="professional-development">Professional Development</h4>
+<ul>
+<li>Access and critically appraise medical literature</li>
+<li>Use various teaching methodologies effectively</li>
+<li>Maintain learning portfolios and self-reflection</li>
+<li>Collaborate in multidisciplinary healthcare teams</li>
+</ul>
+<h3 id="12-module-structure">1.2 Module Structure</h3>
+<table>
+<thead>
+<tr>
+<th>Session</th>
+<th>Topic</th>
+<th>Duration</th>
+<th>Methodology</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Introduction &amp; Epidemiology</td>
+<td>90 min</td>
+<td>Lecture + Interactive Dashboard</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Pathophysiology &amp; Clinical Features</td>
+<td>90 min</td>
+<td>PBL + Case Discussion</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Management Strategies</td>
+<td>120 min</td>
+<td>Workshop + Skills Lab</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Psychosocial Aspects</td>
+<td>60 min</td>
+<td>Role-play + Group Discussion</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Prevention &amp; Control</td>
+<td>90 min</td>
+<td>Community Outreach Planning</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Practical Workshop</td>
+<td>180 min</td>
+<td>OSCE Stations</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Case-Based Integration</td>
+<td>120 min</td>
+<td>Problem-Based Learning</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Field Visit</td>
+<td>Half-day</td>
+<td>Experiential Learning</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Assessment &amp; Feedback</td>
+<td>90 min</td>
+<td>Comprehensive Evaluation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-assessment-framework">1.3 Assessment Framework</h3>
+<h4 id="formative-assessment-60-weightage">Formative Assessment (60% weightage)</h4>
+<ul>
+<li><strong>Pre/Post Session Quizzes</strong>: Knowledge verification</li>
+<li><strong>Case Analysis Exercises</strong>: Clinical reasoning</li>
+<li><strong>Practical Skills Checklists</strong>: Competency assessment</li>
+<li><strong>Peer Assessment</strong>: Professional development</li>
+</ul>
+<h4 id="summative-assessment-40-weightage">Summative Assessment (40% weightage)</h4>
+<ul>
+<li><strong>Written Examination</strong> (20%): MCQs + Short answers</li>
+<li><strong>Practical Examination</strong> (10%): OSCE stations</li>
+<li><strong>Case Analysis</strong> (10%): Written case study</li>
+</ul>
+<h4 id="continuous-assessment-20-additional">Continuous Assessment (20% additional)</h4>
+<ul>
+<li><strong>Participation</strong>: Class engagement and group work</li>
+<li><strong>Portfolio</strong>: Learning reflections and assignments</li>
+<li><strong>Field Work</strong>: Community outreach documentation</li>
+</ul>
+<hr>
+<h2 id="2-theoretical-foundations">2. Theoretical Foundations</h2>
+<h3 id="21-epidemiology">2.1 Epidemiology</h3>
+<h4 id="global-burden">Global Burden</h4>
+<ul>
+<li><strong>Annual Cases</strong>: 1.7 billion worldwide</li>
+<li><strong>Deaths</strong>: 443,832 (mostly children &lt;5 years)</li>
+<li><strong>Leading Cause</strong>: 3rd most common cause of death in children</li>
+<li><strong>Regional Variation</strong>: Highest burden in South Asia and Sub-Saharan Africa</li>
+</ul>
+<h4 id="indian-context">Indian Context</h4>
+<ul>
+<li><strong>Annual Cases</strong>: 1.5 million reported</li>
+<li><strong>Deaths</strong>: 25,000-30,000 annually</li>
+<li><strong>Case Fatality Rate</strong>: 1.5-2% (higher in rural areas)</li>
+<li><strong>Peak Season</strong>: June-October (monsoon-related)</li>
+</ul>
+<h4 id="risk-factors">Risk Factors</h4>
+<ul>
+<li><strong>Age</strong>: Highest incidence in children &lt;5 years (30% of cases)</li>
+<li><strong>Socioeconomic</strong>: Poverty, poor sanitation, malnutrition</li>
+<li><strong>Environmental</strong>: Contaminated water, inadequate hygiene</li>
+<li><strong>Behavioral</strong>: Handwashing practices, food handling</li>
+</ul>
+<h3 id="22-etiology--pathophysiology">2.2 Etiology &amp; Pathophysiology</h3>
+<h4 id="infectious-agents">Infectious Agents</h4>
+<ul>
+<li><strong>Viral</strong> (60%): Rotavirus, Norovirus, Adenovirus</li>
+<li><strong>Bacterial</strong> (15%): E. coli, Shigella, Salmonella, Campylobacter</li>
+<li><strong>Parasitic</strong> (10%): Giardia, Cryptosporidium, Entamoeba</li>
+<li><strong>Unknown</strong> (15%): Non-infectious causes</li>
+</ul>
+<h4 id="pathogenic-mechanisms">Pathogenic Mechanisms</h4>
+<ol>
+<li><strong>Adherence</strong>: Bacterial attachment to intestinal mucosa</li>
+<li><strong>Toxigenesis</strong>: Enterotoxin production (cholera, E. coli)</li>
+<li><strong>Invasion</strong>: Mucosal invasion (Shigella, Salmonella)</li>
+<li><strong>Cytotoxicity</strong>: Direct cell damage (Rotavirus)</li>
+</ol>
+<h4 id="physiological-consequences">Physiological Consequences</h4>
+<ul>
+<li><strong>Fluid Loss</strong>: Secretory diarrhea (cholera toxin)</li>
+<li><strong>Inflammatory Response</strong>: Bloody diarrhea (Shigella)</li>
+<li><strong>Malabsorption</strong>: Nutrient loss and malnutrition</li>
+<li><strong>Electrolyte Imbalance</strong>: Acid-base disturbances</li>
+</ul>
+<h3 id="23-clinical-features">2.3 Clinical Features</h3>
+<h4 id="classification-by-stool-characteristics">Classification by Stool Characteristics</h4>
+<ul>
+<li><strong>Watery Diarrhea</strong>: Rice-water stools (cholera), clear liquid (rotavirus)</li>
+<li><strong>Bloody Diarrhea</strong>: Dysentery with mucus and blood (Shigella)</li>
+<li><strong>Mucoid Diarrhea</strong>: Mucus without blood (parasitic infections)</li>
+</ul>
+<h4 id="associated-symptoms">Associated Symptoms</h4>
+<ul>
+<li><strong>Systemic</strong>: Fever, vomiting, abdominal pain</li>
+<li><strong>Dehydration Signs</strong>: Dry mouth, decreased urine output, lethargy</li>
+<li><strong>Nutritional</strong>: Weight loss, malnutrition, vitamin deficiencies</li>
+</ul>
+<h3 id="24-complications">2.4 Complications</h3>
+<h4 id="acute-complications">Acute Complications</h4>
+<ul>
+<li><strong>Severe Dehydration</strong>: Hypovolemic shock, renal failure</li>
+<li><strong>Electrolyte Imbalance</strong>: Hyponatremia, hyperkalemia</li>
+<li><strong>Metabolic Acidosis</strong>: Lactic acidosis, ketoacidosis</li>
+</ul>
+<h4 id="chronic-complications">Chronic Complications</h4>
+<ul>
+<li><strong>Malnutrition</strong>: Growth retardation, micronutrient deficiencies</li>
+<li><strong>Immunodeficiency</strong>: Increased susceptibility to infections</li>
+<li><strong>Developmental Delay</strong>: Cognitive and physical impairments</li>
+</ul>
+<hr>
+<h2 id="3-management-strategies">3. Management Strategies</h2>
+<h3 id="31-a-b-c-d-approach">3.1 A-B-C-D Approach</h3>
+<h4 id="a-assess-and-classify">A: Assess and Classify</h4>
+<ul>
+<li><strong>History</strong>: Duration, frequency, stool characteristics</li>
+<li><strong>Physical Examination</strong>: Vital signs, dehydration assessment</li>
+<li><strong>Laboratory</strong>: Stool examination, blood tests if indicated</li>
+</ul>
+<h4 id="b-rehydrate">B: Rehydrate</h4>
+<ul>
+<li><strong>Oral Rehydration</strong>: First-line for most cases</li>
+<li><strong>Intravenous Fluids</strong>: Severe dehydration or unable to drink</li>
+<li><strong>Maintenance Fluids</strong>: Continue feeding during illness</li>
+</ul>
+<h4 id="c-continue-feeding">C: Continue Feeding</h4>
+<ul>
+<li><strong>Age-appropriate Diet</strong>: Breast milk, normal foods</li>
+<li><strong>Nutritional Support</strong>: Micronutrients, therapeutic feeding</li>
+<li><strong>Feeding Techniques</strong>: Small frequent meals</li>
+</ul>
+<h4 id="d-disease-specific-treatment">D: Disease-specific Treatment</h4>
+<ul>
+<li><strong>Antibiotics</strong>: Selective use for specific pathogens</li>
+<li><strong>Zinc Supplementation</strong>: All cases of acute diarrhea</li>
+<li><strong>Antimotility Agents</strong>: Avoid in most cases</li>
+</ul>
+<h3 id="32-dehydration-assessment">3.2 Dehydration Assessment</h3>
+<h4 id="who-classification">WHO Classification</h4>
+<ul>
+<li><strong>No Dehydration</strong>: Normal mental status, eyes, thirst</li>
+<li><strong>Some Dehydration</strong>: Restless/irritable, sunken eyes, thirsty</li>
+<li><strong>Severe Dehydration</strong>: Lethargic/unconscious, very sunken eyes, unable to drink</li>
+</ul>
+<h4 id="clinical-signs">Clinical Signs</h4>
+<ul>
+<li><strong>Mental Status</strong>: Alert → Restless → Lethargic</li>
+<li><strong>Eyes</strong>: Normal → Sunken</li>
+<li><strong>Tears</strong>: Present → Absent when crying</li>
+<li><strong>Mouth</strong>: Moist → Dry</li>
+<li><strong>Skin Pinch</strong>: &lt;2 seconds → &gt;2 seconds</li>
+</ul>
+<h3 id="33-oral-rehydration-therapy">3.3 Oral Rehydration Therapy</h3>
+<h4 id="who-ors-composition">WHO ORS Composition</h4>
+<ul>
+<li><strong>Sodium</strong>: 75 mmol/L</li>
+<li><strong>Glucose</strong>: 75 mmol/L</li>
+<li><strong>Potassium</strong>: 20 mmol/L</li>
+<li><strong>Citrate</strong>: 10 mmol/L</li>
+<li><strong>Osmolarity</strong>: 245 mOsm/L</li>
+</ul>
+<h4 id="administration-guidelines">Administration Guidelines</h4>
+<ul>
+<li><strong>Infants</strong>: 50-100 mL/kg over 4 hours</li>
+<li><strong>Children</strong>: 50-100 mL/kg over 4 hours</li>
+<li><strong>Adults</strong>: As needed to replace losses</li>
+<li><strong>Monitoring</strong>: Vomiting, urine output, clinical improvement</li>
+</ul>
+<h3 id="34-pharmacological-management">3.4 Pharmacological Management</h3>
+<h4 id="zinc-supplementation">Zinc Supplementation</h4>
+<ul>
+<li><strong>Dosage</strong>: 10-20 mg/day for 10-14 days</li>
+<li><strong>Benefits</strong>: Reduces duration by 25%, decreases stool volume</li>
+<li><strong>All Cases</strong>: Recommended for all acute diarrhea episodes</li>
+</ul>
+<h4 id="antibiotic-therapy">Antibiotic Therapy</h4>
+<ul>
+<li><strong>Indications</strong>: Bloody diarrhea, cholera, systemic infection</li>
+<li><strong>First-line</strong>: Ciprofloxacin for Shigella</li>
+<li><strong>Cholera</strong>: Doxycycline or azithromycin</li>
+<li><strong>Duration</strong>: 3-5 days based on clinical response</li>
+</ul>
+<hr>
+<h2 id="4-case-studies">4. Case Studies</h2>
+<h3 id="41-case-1-acute-watery-diarrhea">4.1 Case 1: Acute Watery Diarrhea</h3>
+<h4 id="patient-profile">Patient Profile</h4>
+<ul>
+<li><strong>Name</strong>: Aarav Kumar, 2.5 years</li>
+<li><strong>Location</strong>: Urban slum, Mumbai</li>
+<li><strong>Presenting Complaint</strong>: Loose motions since yesterday</li>
+</ul>
+<h4 id="clinical-findings">Clinical Findings</h4>
+<ul>
+<li><strong>Stool</strong>: 8-10 watery stools, no blood/mucus</li>
+<li><strong>Vital Signs</strong>: Heart rate 120/min, respiratory rate 35/min</li>
+<li><strong>Dehydration</strong>: Some dehydration (sunken eyes, thirsty)</li>
+<li><strong>Nutrition</strong>: Moderately malnourished</li>
+</ul>
+<h4 id="diagnosis">Diagnosis</h4>
+<p>Acute watery diarrhea (some dehydration) - likely viral gastroenteritis</p>
+<h4 id="management">Management</h4>
+<ol>
+<li><strong>Rehydration</strong>: ORS 75 mL/kg over 4 hours</li>
+<li><strong>Zinc</strong>: 20 mg/day for 14 days</li>
+<li><strong>Feeding</strong>: Continue breastfeeding + normal diet</li>
+<li><strong>Follow-up</strong>: Daily monitoring for 3 days</li>
+</ol>
+<h4 id="learning-points">Learning Points</h4>
+<ul>
+<li>Early recognition of dehydration signs</li>
+<li>Importance of continued feeding</li>
+<li>Role of zinc in reducing diarrhea duration</li>
+<li>Community-level prevention strategies</li>
+</ul>
+<h3 id="42-case-2-acute-bloody-diarrhea">4.2 Case 2: Acute Bloody Diarrhea</h3>
+<h4 id="patient-profile">Patient Profile</h4>
+<ul>
+<li><strong>Name</strong>: Priya Sharma, 14 years</li>
+<li><strong>Location</strong>: Rural village, Uttar Pradesh</li>
+<li><strong>Presenting Complaint</strong>: Blood in stools for 3 days</li>
+</ul>
+<h4 id="clinical-findings">Clinical Findings</h4>
+<ul>
+<li><strong>Stool</strong>: 10-12 episodes with blood and mucus</li>
+<li><strong>Vital Signs</strong>: Fever 101°F, abdominal tenderness</li>
+<li><strong>Dehydration</strong>: No dehydration</li>
+<li><strong>Social</strong>: School absenteeism, family concern</li>
+</ul>
+<h4 id="diagnosis">Diagnosis</h4>
+<p>Bacillary dysentery (Shigella infection)</p>
+<h4 id="management">Management</h4>
+<ol>
+<li><strong>Antibiotics</strong>: Ciprofloxacin 15 mg/kg twice daily for 3 days</li>
+<li><strong>ORS</strong>: Maintenance fluids</li>
+<li><strong>Zinc</strong>: 20 mg/day for 14 days</li>
+<li><strong>Hygiene</strong>: Handwashing education</li>
+</ol>
+<h4 id="learning-points">Learning Points</h4>
+<ul>
+<li>Differentiation from watery diarrhea</li>
+<li>Antibiotic indications in bloody diarrhea</li>
+<li>Psychosocial impact on adolescents</li>
+<li>Prevention through improved sanitation</li>
+</ul>
+<h3 id="43-case-3-cholera-outbreak">4.3 Case 3: Cholera Outbreak</h3>
+<h4 id="patient-profile">Patient Profile</h4>
+<ul>
+<li><strong>Name</strong>: Ramesh Yadav, 35 years</li>
+<li><strong>Location</strong>: Flood-affected area, Bihar</li>
+<li><strong>Presenting Complaint</strong>: Severe vomiting and diarrhea</li>
+</ul>
+<h4 id="clinical-findings">Clinical Findings</h4>
+<ul>
+<li><strong>Stool</strong>: Rice-water stools, profuse diarrhea</li>
+<li><strong>Vital Signs</strong>: Severe dehydration, hypotension</li>
+<li><strong>Electrolytes</strong>: Metabolic acidosis</li>
+<li><strong>Community</strong>: Multiple affected family members</li>
+</ul>
+<h4 id="diagnosis">Diagnosis</h4>
+<p>Cholera with hypovolemic shock</p>
+<h4 id="management">Management</h4>
+<ol>
+<li><strong>IV Fluids</strong>: Ringer's lactate 100 mL/kg over 3 hours</li>
+<li><strong>Antibiotics</strong>: Azithromycin 1g single dose</li>
+<li><strong>ORS</strong>: Transition after stabilization</li>
+<li><strong>Public Health</strong>: Contact tracing, water chlorination</li>
+</ol>
+<h4 id="learning-points">Learning Points</h4>
+<ul>
+<li>Recognition of cholera epidemic</li>
+<li>Aggressive rehydration in severe cases</li>
+<li>Public health response to outbreaks</li>
+<li>Community-level containment strategies</li>
+</ul>
+<hr>
+<h2 id="5-psychosocial-aspects">5. Psychosocial Aspects</h2>
+<h3 id="51-family-dynamics">5.1 Family Dynamics</h3>
+<h4 id="caregiver-burden">Caregiver Burden</h4>
+<ul>
+<li><strong>Emotional Stress</strong>: Anxiety about child's health</li>
+<li><strong>Economic Impact</strong>: Loss of work, treatment costs</li>
+<li><strong>Social Isolation</strong>: Stigma and discrimination</li>
+<li><strong>Family Roles</strong>: Gender-specific caregiving responsibilities</li>
+</ul>
+<h4 id="support-strategies">Support Strategies</h4>
+<ul>
+<li><strong>Counseling</strong>: Address fears and misconceptions</li>
+<li><strong>Economic Support</strong>: Link to government schemes</li>
+<li><strong>Family Education</strong>: Involvement in care planning</li>
+<li><strong>Community Support</strong>: Local support groups</li>
+</ul>
+<h3 id="52-cultural-considerations">5.2 Cultural Considerations</h3>
+<h4 id="traditional-beliefs">Traditional Beliefs</h4>
+<ul>
+<li><strong>Hot/Cold Theory</strong>: Diarrhea as &quot;heat&quot; imbalance</li>
+<li><strong>Herbal Remedies</strong>: Common first-line treatment</li>
+<li><strong>Spiritual Causes</strong>: Attribution to supernatural factors</li>
+<li><strong>Dietary Restrictions</strong>: Cultural food avoidance</li>
+</ul>
+<h4 id="cultural-competence">Cultural Competence</h4>
+<ul>
+<li><strong>Respect Beliefs</strong>: Integration with modern medicine</li>
+<li><strong>Language Barriers</strong>: Use of local languages</li>
+<li><strong>Health Literacy</strong>: Culturally appropriate education</li>
+<li><strong>Community Leaders</strong>: Involvement of religious leaders</li>
+</ul>
+<h3 id="53-stigma--discrimination">5.3 Stigma &amp; Discrimination</h3>
+<h4 id="sources-of-stigma">Sources of Stigma</h4>
+<ul>
+<li><strong>Contagious Nature</strong>: Fear of transmission</li>
+<li><strong>Sanitation Issues</strong>: Association with poor hygiene</li>
+<li><strong>Social Taboos</strong>: Discussion of bowel movements</li>
+<li><strong>Economic Status</strong>: Link to poverty</li>
+</ul>
+<h4 id="mitigation-strategies">Mitigation Strategies</h4>
+<ul>
+<li><strong>Health Education</strong>: Correct misconceptions</li>
+<li><strong>Community Programs</strong>: Inclusive diarrhea control</li>
+<li><strong>Policy Support</strong>: Anti-discrimination measures</li>
+<li><strong>Media Campaigns</strong>: Positive messaging</li>
+</ul>
+<hr>
+<h2 id="6-prevention--control">6. Prevention &amp; Control</h2>
+<h3 id="61-wash-interventions">6.1 WASH Interventions</h3>
+<h4 id="water-safety">Water Safety</h4>
+<ul>
+<li><strong>Household Treatment</strong>: Boiling, chlorination, filtration</li>
+<li><strong>Safe Storage</strong>: Clean containers, covered vessels</li>
+<li><strong>Source Protection</strong>: Wells, piped water systems</li>
+<li><strong>Quality Monitoring</strong>: Regular testing programs</li>
+</ul>
+<h4 id="sanitation">Sanitation</h4>
+<ul>
+<li><strong>Toilet Construction</strong>: Individual and community toilets</li>
+<li><strong>Open Defecation Free</strong>: Village-level certification</li>
+<li><strong>Waste Management</strong>: Proper disposal systems</li>
+<li><strong>Handwashing Stations</strong>: Schools and public places</li>
+</ul>
+<h4 id="hygiene-promotion">Hygiene Promotion</h4>
+<ul>
+<li><strong>Behavior Change</strong>: Handwashing with soap</li>
+<li><strong>Food Hygiene</strong>: Safe preparation and storage</li>
+<li><strong>Environmental Cleaning</strong>: Surface disinfection</li>
+<li><strong>Personal Hygiene</strong>: Bathing and clothing</li>
+</ul>
+<h3 id="62-vaccination-programs">6.2 Vaccination Programs</h3>
+<h4 id="rotavirus-vaccine">Rotavirus Vaccine</h4>
+<ul>
+<li><strong>Coverage</strong>: 2-dose schedule (6 and 10 weeks)</li>
+<li><strong>Impact</strong>: 40% reduction in severe diarrhea</li>
+<li><strong>Target</strong>: Infants in routine immunization</li>
+<li><strong>Storage</strong>: Cold chain maintenance</li>
+</ul>
+<h4 id="cholera-vaccine">Cholera Vaccine</h4>
+<ul>
+<li><strong>Oral Vaccine</strong>: 2-dose schedule</li>
+<li><strong>Indications</strong>: Outbreak settings, high-risk areas</li>
+<li><strong>Duration</strong>: 2-3 years protection</li>
+<li><strong>Integration</strong>: With other preventive measures</li>
+</ul>
+<h3 id="63-community-mobilization">6.3 Community Mobilization</h3>
+<h4 id="stakeholder-engagement">Stakeholder Engagement</h4>
+<ul>
+<li><strong>Local Leaders</strong>: Religious and community leaders</li>
+<li><strong>Women's Groups</strong>: Self-help groups and cooperatives</li>
+<li><strong>School Programs</strong>: Health education in schools</li>
+<li><strong>Youth Clubs</strong>: Peer education programs</li>
+</ul>
+<h4 id="behavior-change-communication">Behavior Change Communication</h4>
+<ul>
+<li><strong>Mass Media</strong>: TV, radio, social media campaigns</li>
+<li><strong>Interpersonal Communication</strong>: ASHA and community health workers</li>
+<li><strong>Group Education</strong>: Community meetings and workshops</li>
+<li><strong>Monitoring</strong>: Behavior change indicators</li>
+</ul>
+<hr>
+<h2 id="7-indian-healthcare-context">7. Indian Healthcare Context</h2>
+<h3 id="71-national-health-mission">7.1 National Health Mission</h3>
+<h4 id="objectives">Objectives</h4>
+<ul>
+<li>Reduce child mortality from diarrhea by 70% by 2030</li>
+<li>Achieve universal coverage of ORS and zinc</li>
+<li>Strengthen surveillance and outbreak response</li>
+<li>Integrate with broader RMNCH+A approach</li>
+</ul>
+<h4 id="key-components">Key Components</h4>
+<ul>
+<li><strong>RMNCH+A</strong>: Reproductive, Maternal, Newborn, Child and Adolescent Health</li>
+<li><strong>NRHM</strong>: National Rural Health Mission</li>
+<li><strong>NUHM</strong>: National Urban Health Mission</li>
+</ul>
+<h3 id="72-icds--anganwadi-system">7.2 ICDS &amp; Anganwadi System</h3>
+<h4 id="role-in-diarrhea-control">Role in Diarrhea Control</h4>
+<ul>
+<li><strong>Growth Monitoring</strong>: Early detection of malnutrition</li>
+<li><strong>Nutrition Rehabilitation</strong>: Therapeutic feeding centers</li>
+<li><strong>Mother Education</strong>: Hygiene and feeding counseling</li>
+<li><strong>Supplementary Nutrition</strong>: Reduces diarrhea incidence</li>
+</ul>
+<h4 id="coverage">Coverage</h4>
+<ul>
+<li><strong>Anganwadis</strong>: 1.3 lakh centers nationwide</li>
+<li><strong>Beneficiaries</strong>: 8.2 million children daily</li>
+<li><strong>Workers</strong>: Trained community health workers</li>
+</ul>
+<h3 id="73-asha-program">7.3 ASHA Program</h3>
+<h4 id="program-features">Program Features</h4>
+<ul>
+<li><strong>Selection</strong>: Local women with 8th grade education</li>
+<li><strong>Training</strong>: 23-day basic module + refresher training</li>
+<li><strong>Incentives</strong>: Performance-based payments</li>
+<li><strong>Technology</strong>: Mobile applications for reporting</li>
+</ul>
+<h4 id="diarrhea-management-role">Diarrhea Management Role</h4>
+<ul>
+<li><strong>Case Identification</strong>: Early detection and referral</li>
+<li><strong>ORS Distribution</strong>: Home-based treatment</li>
+<li><strong>Health Education</strong>: Community awareness programs</li>
+<li><strong>Monitoring</strong>: Treatment compliance and outcomes</li>
+</ul>
+<hr>
+<h2 id="8-practical-skills">8. Practical Skills</h2>
+<h3 id="81-dehydration-assessment">8.1 Dehydration Assessment</h3>
+<h4 id="who-algorithm">WHO Algorithm</h4>
+<ol>
+<li><strong>Mental Status</strong>: Normal vs Restless/Lethargic</li>
+<li><strong>Eyes</strong>: Normal vs Sunken</li>
+<li><strong>Tears</strong>: Present vs Absent when crying</li>
+<li><strong>Mouth</strong>: Moist vs Dry</li>
+<li><strong>Skin Pinch</strong>: Goes back quickly vs Slowly (&gt;2 seconds)</li>
+<li><strong>Thirst</strong>: Drinks normally vs Drinks eagerly/Unable to drink</li>
+</ol>
+<h4 id="classification">Classification</h4>
+<ul>
+<li><strong>No Dehydration</strong>: All signs normal</li>
+<li><strong>Some Dehydration</strong>: 2+ signs present</li>
+<li><strong>Severe Dehydration</strong>: 2+ severe signs present</li>
+</ul>
+<h3 id="82-ors-preparation">8.2 ORS Preparation</h3>
+<h4 id="materials-needed">Materials Needed</h4>
+<ul>
+<li><strong>ORS Packet</strong>: Pre-packaged WHO formulation</li>
+<li><strong>Clean Water</strong>: 1 liter for one packet</li>
+<li><strong>Clean Container</strong>: For mixing and storage</li>
+<li><strong>Spoon/Cup</strong>: For administration</li>
+</ul>
+<h4 id="preparation-steps">Preparation Steps</h4>
+<ol>
+<li><strong>Boil Water</strong>: Cool to room temperature</li>
+<li><strong>Empty Packet</strong>: Into clean container</li>
+<li><strong>Add Water</strong>: Exactly 1 liter</li>
+<li><strong>Mix Thoroughly</strong>: Until dissolved</li>
+<li><strong>Storage</strong>: Use within 24 hours</li>
+</ol>
+<h3 id="83-patient-counseling">8.3 Patient Counseling</h3>
+<h4 id="key-messages">Key Messages</h4>
+<ul>
+<li><strong>Continue Feeding</strong>: Age-appropriate diet during illness</li>
+<li><strong>ORS Administration</strong>: Correct technique and amounts</li>
+<li><strong>When to Return</strong>: Danger signs requiring medical attention</li>
+<li><strong>Prevention</strong>: Handwashing and safe water practices</li>
+</ul>
+<h4 id="communication-skills">Communication Skills</h4>
+<ul>
+<li><strong>Active Listening</strong>: Understand family concerns</li>
+<li><strong>Simple Language</strong>: Avoid medical jargon</li>
+<li><strong>Demonstration</strong>: Show rather than tell</li>
+<li><strong>Follow-up</strong>: Regular contact and support</li>
+</ul>
+<hr>
+<h2 id="9-assessment-tools">9. Assessment Tools</h2>
+<h3 id="91-multiple-choice-questions">9.1 Multiple Choice Questions</h3>
+<h4 id="sample-questions">Sample Questions</h4>
+<p><strong>Question 1:</strong> Which of the following defines acute diarrhea according to WHO?</p>
+<ul>
+<li>A) Passage of 1-2 loose stools per day</li>
+<li>B) Passage of 3 or more loose stools per day</li>
+<li>C) Passage of formed stools with mucus</li>
+<li>D) Passage of stools with blood only</li>
+</ul>
+<p><strong>Answer:</strong> B) Passage of 3 or more loose stools per day</p>
+<p><strong>Question 2:</strong> Which sign is most reliable for assessing severe dehydration in children?</p>
+<ul>
+<li>A) Dry mouth</li>
+<li>B) Sunken eyes</li>
+<li>C) Slow skin pinch (&gt;2 seconds)</li>
+<li>D) Decreased urine output</li>
+</ul>
+<p><strong>Answer:</strong> C) Slow skin pinch (&gt;2 seconds)</p>
+<h3 id="92-osce-stations">9.2 OSCE Stations</h3>
+<h4 id="station-1-dehydration-assessment">Station 1: Dehydration Assessment</h4>
+<p><strong>Task:</strong> Assess dehydration status in a child mannequin
+<strong>Time:</strong> 5 minutes
+<strong>Assessment Criteria:</strong></p>
+<ul>
+<li>Systematic examination approach</li>
+<li>Correct identification of signs</li>
+<li>Appropriate classification</li>
+<li>Communication with &quot;parent&quot;</li>
+</ul>
+<h4 id="station-2-ors-preparation">Station 2: ORS Preparation</h4>
+<p><strong>Task:</strong> Prepare ORS solution correctly
+<strong>Time:</strong> 5 minutes
+<strong>Assessment Criteria:</strong></p>
+<ul>
+<li>Correct measurement of water</li>
+<li>Proper mixing technique</li>
+<li>Hygiene maintenance</li>
+<li>Patient education</li>
+</ul>
+<h3 id="93-case-analysis-rubrics">9.3 Case Analysis Rubrics</h3>
+<h4 id="scoring-criteria">Scoring Criteria</h4>
+<ul>
+<li><strong>Content Knowledge</strong> (40%): Accuracy of medical information</li>
+<li><strong>Clinical Reasoning</strong> (30%): Logical diagnostic and management approach</li>
+<li><strong>Psychosocial Awareness</strong> (15%): Family and community considerations</li>
+<li><strong>Communication</strong> (15%): Clarity and organization of response</li>
+</ul>
+<h4 id="grade-descriptors">Grade Descriptors</h4>
+<ul>
+<li><strong>Excellent (80-100%)</strong>: Comprehensive, accurate, well-reasoned</li>
+<li><strong>Good (60-79%)</strong>: Mostly correct with minor gaps</li>
+<li><strong>Satisfactory (40-59%)</strong>: Basic understanding with significant gaps</li>
+<li><strong>Unsatisfactory (&lt;40%)</strong>: Major deficiencies in knowledge or reasoning</li>
+</ul>
+<hr>
+<h2 id="10-references--resources">10. References &amp; Resources</h2>
+<h3 id="101-key-guidelines">10.1 Key Guidelines</h3>
+<h4 id="who-guidelines">WHO Guidelines</h4>
+<ul>
+<li><strong>Treatment of Diarrhoea</strong>: A manual for physicians and other senior health workers</li>
+<li><strong>Oral Rehydration Salts</strong>: Production of the new ORS</li>
+<li><strong>Integrated Management of Childhood Illness</strong>: Diarrhea module</li>
+</ul>
+<h4 id="iap-guidelines">IAP Guidelines</h4>
+<ul>
+<li><strong>Indian Academy of Pediatrics</strong>: Diarrhea management in children</li>
+<li><strong>National Guidelines</strong>: Management of acute diarrhea</li>
+<li><strong>Community Pediatrics</strong>: Preventive strategies</li>
+</ul>
+<h3 id="102-research-papers">10.2 Research Papers</h3>
+<h4 id="epidemiology">Epidemiology</h4>
+<ul>
+<li>Bhutta et al. (2022): Global burden of childhood diarrhea</li>
+<li>Troeger et al. (2018): Estimates of global, regional, and national morbidity, mortality, and aetiologies of diarrhoeal diseases</li>
+</ul>
+<h4 id="management">Management</h4>
+<ul>
+<li>Munos et al. (2010): The effect of oral rehydration solution and recommended home fluids on diarrhoea mortality</li>
+<li>Lazzerini et al. (2016): Oral zinc for treating diarrhoea in children</li>
+</ul>
+<h4 id="prevention">Prevention</h4>
+<ul>
+<li>Clasen et al. (2015): Effectiveness of a rural sanitation program on diarrhea, soil-transmitted helminth infection, and child malnutrition in Odisha, India</li>
+<li>Praharaj et al. (2016): Norovirus infection in children with acute gastroenteritis in Odisha, India</li>
+</ul>
+<h3 id="103-online-resources">10.3 Online Resources</h3>
+<h4 id="educational-platforms">Educational Platforms</h4>
+<ul>
+<li><strong>CDC Diarrhea Resources</strong>: https://www.cdc.gov/diarrhea/</li>
+<li><strong>WHO Diarrhea Fact Sheet</strong>: https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease</li>
+<li><strong>BMJ Learning</strong>: Interactive diarrhea modules</li>
+</ul>
+<h4 id="indian-resources">Indian Resources</h4>
+<ul>
+<li><strong>NHM Guidelines</strong>: https://nhm.gov.in/</li>
+<li><strong>IAP Resources</strong>: https://iapindia.org/</li>
+<li><strong>ICMR Publications</strong>: https://www.icmr.gov.in/</li>
+</ul>
+<hr>
+<h2 id="hyperlink-index">Hyperlink Index</h2>
+<h3 id="internal-links">Internal Links</h3>
+<ul>
+<li>[Module</li>
+</ul>
+
+</body>
+</html>
