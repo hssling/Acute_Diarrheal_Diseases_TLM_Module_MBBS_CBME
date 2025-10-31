@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Progress Dashboard - Acute Diarrheal Diseases</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 20px; margin-bottom: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; }
+        .header p { font-size: 1.2rem; opacity: 0.9; }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .dashboard-card { background: white; padding: 25px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s ease; }
+        .dashboard-card:hover { transform: translateY(-5px); }
+        .dashboard-icon { font-size: 3rem; margin-bottom: 15px; }
+        .dashboard-value { font-size: 2.5rem; font-weight: 700; color: #1f2937; margin-bottom: 5px; }
+        .dashboard-label { color: #6b7280; font-size: 1rem; }
+        .progress-section { background: white; border-radius: 16px; padding: 30px; margin-bottom: 30px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .section-title { font-size: 1.8rem; font-weight: 600; margin-bottom: 25px; color: #1f2937; text-align: center; }
+        .module-progress { margin-bottom: 25px; }
+        .module-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .module-name { font-weight: 600; color: #1f2937; }
+        .module-percentage { font-weight: 600; color: #3b82f6; }
+        .progress-bar { background: #e5e7eb; height: 8px; border-radius: 4px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #10b981 0%, #3b82f6 100%); transition: width 0.3s ease; }
+        .achievements-section { background: white; border-radius: 16px; padding: 30px; margin-bottom: 30px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .achievement-badge { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 12px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 600; display: inline-block; margin: 8px; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3); }
+        .stats-section { background: white; border-radius: 16px; padding: 30px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .stat-item { text-align: center; padding: 20px; background: #f8fafc; border-radius: 12px; border: 1px solid #e5e7eb; }
+        .stat-number { font-size: 2rem; font-weight: 700; color: #3b82f6; margin-bottom: 5px; }
+        .stat-label { color: #6b7280; font-size: 0.9rem; }
+        .certificate-section { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 16px; padding: 30px; text-align: center; margin-top: 30px; border: 2px solid #3b82f6; }
+        .certificate-btn { background: #3b82f6; color: white; border: none; padding: 15px 30px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
+        .certificate-btn:hover { background: #2563eb; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4); }
+        @media (max-width: 768px) { .container { padding: 10px; } .dashboard-grid { grid-template-columns: 1fr; } .header h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Learning Progress Dashboard</h1>
+            <p>Track your achievements in Acute Diarrheal Diseases</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <div class="dashboard-icon">📚</div>
+                <div class="dashboard-value">85%</div>
+                <div class="dashboard-label">Overall Progress</div>
+            </div>
+            <div class="dashboard-card">
+                <div class="dashboard-icon">✅</div>
+                <div class="dashboard-value">156</div>
+                <div class="dashboard-label">Questions Answered</div>
+            </div>
+            <div class="dashboard-card">
+                <div class="dashboard-icon">🎯</div>
+                <div class="dashboard-value">92%</div>
+                <div class="dashboard-label">Average Score</div>
+            </div>
+            <div class="dashboard-card">
+                <div class="dashboard-icon">⏱️</div>
+                <div class="dashboard-value">4.2h</div>
+                <div class="dashboard-label">Time Spent Learning</div>
+            </div>
+            <div class="dashboard-card">
+                <div class="dashboard-icon">🏆</div>
+                <div class="dashboard-value">5</div>
+                <div class="dashboard-label">Achievements Unlocked</div>
+            </div>
+            <div class="dashboard-card">
+                <div class="dashboard-icon">📈</div>
+                <div class="dashboard-value">+15%</div>
+                <div class="dashboard-label">Knowledge Gain</div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <h2 class="section-title">Module Progress</h2>
+
+            <div class="module-progress">
+                <div class="module-header">
+                    <span class="module-name">Theoretical Foundations</span>
+                    <span class="module-percentage">100%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+            </div>
+
+            <div class="module-progress">
+                <div class="module-header">
+                    <span class="module-name">Clinical Assessment</span>
+                    <span class="module-percentage">95%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 95%"></div>
+                </div>
+            </div>
+
+            <div class="module-progress">
+                <div class="module-header">
+                    <span class="module-name">Management Strategies</span>
+                    <span class="module-percentage">88%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 88%"></div>
+                </div>
+            </div>
+
+            <div class="module-progress">
+                <div class="module-header">
+                    <span class="module-name">Case Studies</span>
+                    <span class="module-percentage">90%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 90%"></div>
+                </div>
+            </div>
+
+            <div class="module-progress">
+                <div class="module-header">
+                    <span class="module-name">Prevention & Control</span>
+                    <span class="module-percentage">82%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 82%"></div>
+                </div>
+            </div>
+
+            <div class="module-progress">
+                <div class="module-header">
+                    <span class="module-name">Psychosocial Aspects</span>
+                    <span class="module-percentage">78%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 78%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="achievements-section">
+            <h2 class="section-title">Achievements Unlocked</h2>
+            <div style="text-align: center;">
+                <div class="achievement-badge">🧠 Knowledge Seeker - Completed all theory modules</div>
+                <div class="achievement-badge">🔍 Assessment Master - Expert in dehydration evaluation</div>
+                <div class="achievement-badge">🧮 Calculation Wizard - Perfect ORS calculations</div>
+                <div class="achievement-badge">📋 Case Solver - Analyzed complex patient scenarios</div>
+                <div class="achievement-badge">🌍 Public Health Advocate - Understanding prevention strategies</div>
+                <div class="achievement-badge">💡 Quick Thinker - Fast quiz responses</div>
+                <div class="achievement-badge">📊 Data Analyst - Interpreting surveillance data</div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <h2 class="section-title">Learning Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">23</div>
+                    <div class="stat-label">Modules Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">89%</div>
+                    <div class="stat-label">Quiz Performance</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Case Studies Reviewed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Interactive Exercises</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Videos Watched</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">156</div>
+                    <div class="stat-label">Questions Practiced</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="certificate-section">
+            <h2 style="color: #1f2937; margin-bottom: 15px;">🎓 Congratulations!</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 25px; color: #6b7280;">
+                You have successfully completed the Acute Diarrheal Diseases learning module with outstanding performance.
+            </p>
+            <button class="certificate-btn" onclick="generateCertificate()">Download Certificate</button>
+        </div>
+    </div>
+
+    <script>
+        function generateCertificate() {
+            // Simple certificate generation (in a real implementation, this would create a PDF)
+            alert('Certificate Downloaded!\\n\\nAcute Diarrheal Diseases\\nLearning Module Completion\\n\\nCongratulations on your achievement!\\n\\nDate: ' + new Date().toLocaleDateString());
+
+            // In a real implementation, you would use a library like jsPDF to generate an actual certificate
+            // Example:
+            // const { jsPDF } = window.jspdf;
+            // const doc = new jsPDF();
+            // doc.text('Certificate of Completion', 20, 30);
+            // doc.text('Acute Diarrheal Diseases Module', 20, 50);
+            // doc.text('Awarded to: [Student Name]', 20, 70);
+            // doc.save('certificate.pdf');
+        }
+
+        // Simulate progress updates (in a real app, this would come from a backend)
+        function updateProgress() {
+            // This function could update progress bars dynamically based on user interactions
+            console.log('Progress updated');
+        }
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgress();
+        });
+    </script>
+</body>
+</html>
