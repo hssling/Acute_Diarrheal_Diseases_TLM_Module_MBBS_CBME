@@ -253,7 +253,7 @@ Automated testing and deployment via GitHub Actions:
 - **Position**: Professor, Community Medicine
 - **Institution**: SIMSRH (Shridevi Institute of Medical Sciences and Research Hospital), Tumkur
 - **Email**: hssling@yahoo.com
-- **Phone**: +91-88931087719
+- **Phone**: +91-8941087719
 - **Specialization**: Community Medicine, Medical Education, Public Health
 
 ## 🤝 Contributing Organizations
@@ -268,7 +268,7 @@ Automated testing and deployment via GitHub Actions:
 
 - **📧 Email**: hssling@yahoo.com
 - **🏥 Institution**: SIMSRH, Tumkur, Karnataka
-- **📱 WhatsApp**: +91-88931087719
+- **📱 WhatsApp**: +91-8941087719
 - **🌐 Website**: [SIMSRH Official Website]
 
 ## 🙏 Acknowledgments
